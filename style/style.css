@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+/* CSS Reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.attribution {
+  display: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope";
+  background-color: hsl(235, 18%, 26%);
+  font-family: "Roboto";
+}
+
+.container {
+  width: 375px;
+  background-color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.right {
+  background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+  width: 375px;
+  height: 284px;
+  background-size: cover;
+  background-position: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.left-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #242742;
+}
+
+.left-info h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.left-info p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.left-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.left-info ul li {
+  list-style-image: url(../assets/images/icon-list.svg);
+  list-style-position: inside;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #242742;
+  line-height: 24px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-item label .invalid-email {
+  color: #ff6155;
+  display: none;
+}
+
+.form-item label .invalid-email.active {
+  display: block;
+}
+
+.form-item input,
+.form-item button {
+  padding: 16px 24px 16px 24px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-item input {
+  border: 1px solid gray;
+}
+
+.form-item input.active {
+  background-color: rgba(255, 98, 87, 0.2);
+  border: 1px solid #ff6155;
+}
+
+.form-item button {
+  background: #242742;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.form-item button:hover {
+  background: linear-gradient(
+    127deg,
+    rgba(255, 63, 124, 1) 40%,
+    rgba(255, 154, 34, 1) 70%
+  );
+}
+
+.confirned-message {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: none;
+}
+
+.confirned-message.active {
+  display: block;
+}
+
+.confirned-message img {
+  width: 64px;
+  height: 64px;
+}
+
+.confirned-message h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #242742;
+}
+
+.confirned-message p {
+  margin-top: 2rem;
+  color: #242742;
+  margin-bottom: 263px;
+}
+
+.confirned-message button {
+  background-color: #242742;
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.confirned-message button:hover {
+  background: linear-gradient(
+    127deg,
+    rgba(255, 63, 124, 1) 40%,
+    rgba(255, 154, 34, 1) 70%
+  );
+}
+
+#user-email {
+  font-weight: 700;
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .body {
+    padding: 60px 0;
+  }
+
+  .container {
+    width: 608px;
+    padding: 40px;
+    border-radius: 36px;
+  }
+
+  .right {
+    width: 528px;
+    height: 358px;
+    border-radius: 20px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .left-info h1 {
+    font-size: 56px;
+    font-weight: bold;
+  }
+
+  form {
+    gap: 16px;
+  }
+
+  .form-item button {
+    margin-bottom: 0px;
+  }
+
+  .confirned-message {
+    width: 504px;
+    height: 520px;
+    padding: 64px;
+  }
+
+  .confirned-message p {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 64.0625rem) {
+  .body {
+    padding: 120px 0;
+  }
+
+  .container {
+    width: 904px;
+    height: 641px;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    padding: 32px;
+    border-radius: 32px;
+    align-items: center;
+  }
+
+  .right {
+    order: 2;
+    width: 400px;
+    height: 593px;
+    border-radius: 20px;
+  }
+
+  .left {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 376px;
+  }
+
+  .left-info h1 {
+    font-size: 56px;
+    font-weight: bold;
+  }
+
+  form {
+    gap: 24px;
+  }
+
+  .form-item button {
+    margin-bottom: 0px;
+  }
+
+  .confirned-message {
+    width: 504px;
+    height: 520px;
+    padding: 64px;
+  }
+
+  .confirned-message p {
+    margin-bottom: 2rem;
+  }
+}
