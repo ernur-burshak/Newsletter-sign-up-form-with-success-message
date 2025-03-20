@@ -152,6 +152,8 @@ form {
 .confirned-message {
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: none;
 }
 
@@ -174,7 +176,7 @@ form {
 .confirned-message p {
   margin-top: 2rem;
   color: #242742;
-  margin-bottom: 263px;
+  margin-bottom: 170px;
 }
 
 .confirned-message button {
@@ -209,6 +211,12 @@ form {
     border-radius: 36px;
   }
 
+  .container.success {
+    width: 504px;
+    height: auto;
+    padding: 64px;
+  }
+
   .right {
     width: 528px;
     height: 358px;
@@ -237,9 +245,14 @@ form {
   }
 
   .confirned-message {
-    width: 504px;
-    height: 520px;
-    padding: 64px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .confirned-message h2 {
+    font-size: 56px;
   }
 
   .confirned-message p {
@@ -261,6 +274,12 @@ form {
     padding: 32px;
     border-radius: 32px;
     align-items: center;
+  }
+
+  .container.success {
+    width: 504px;
+    height: auto;
+    padding: 64px;
   }
 
   .right {
@@ -294,9 +313,14 @@ form {
   }
 
   .confirned-message {
-    width: 504px;
-    height: 520px;
-    padding: 64px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .confirned-message h2 {
+    font-size: 56px;
   }
 
   .confirned-message p {
