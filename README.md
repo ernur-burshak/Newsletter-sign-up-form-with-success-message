@@ -1,6 +1,6 @@
 # Frontend Mentor - Newsletter sign-up form with success message solution
 
-This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,8 +15,6 @@ This is a solution to the [Newsletter sign-up form with success message challeng
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -34,20 +32,33 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Desktop design:
+![](./design/desktop-design.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+Desktop success active:
+![](./design/desktop-success-active.jpg)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Desktop success:
+![](./design/desktop-success.jpg)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+Mobile design:
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./design/mobile-design.jpg)
+
+Mobile success:
+
+![](./design/mobile-success.jpg)
+
+Active states:
+![](./design/active-states.jpg)
+
+Error states:
+![](./design/error-states.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL here](https://github.com/ernur-burshak/Newsletter-sign-up-form-with-success-message)
+- Live Site URL: [live site URL here](https://ernur-burshak.github.io/Newsletter-sign-up-form-with-success-message/)
 
 ## My process
 
@@ -56,61 +67,110 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+In this lesson, I taught you how to create a form, check it, and display a successful submission.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<form id="form">
+  <div class="form-item">
+    <label for="email">
+      <p>Email address</p>
+      <p id="invalid-email" class="invalid-email">Valid email required</p>
+    </label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="email@company.com"
+    />
+  </div>
+  <div class="form-item">
+    <button id="submit-button" type="submit">
+      Subscribe to monthly newsletter
+    </button>
+  </div>
+</form>
 ```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.form-item button:hover {
+  background: linear-gradient(
+    127deg,
+    rgba(255, 63, 124, 1) 40%,
+    rgba(255, 154, 34, 1) 70%
+  );
 }
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const containerE1 = document.getElementById("container");
+const rightE1 = document.getElementById("right");
+const leftE1 = document.getElementById("left");
+
+const invalidEmailE1 = document.getElementById("invalid-email");
+const emailInput = document.getElementById("email");
+const submitButtonE1 = document.getElementById("submit-button");
+
+const confirnedMessageE1 = document.getElementById("confirned-message");
+const userEmailE1 = document.getElementById("user-email");
+const dismissMessageE1 = document.getElementById("dismiss-message");
+
+function formSuccess() {
+  containerE1.classList.add("success");
+  confirnedMessageE1.classList.add("active");
+  rightE1.style.display = "none";
+  leftE1.style.display = "none";
 }
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+submitButtonE1.addEventListener("click", (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+
+  if (validateEmail(email)) {
+    formSuccess();
+    userEmailE1.innerText = email;
+    emailInput.value = "";
+
+    invalidEmailE1.classList.remove("active");
+    emailInput.classList.remove("active");
+  } else {
+    invalidEmailE1.classList.add("active");
+    emailInput.classList.add("active");
+  }
+});
+
+dismissMessageE1.addEventListener("click", () => {
+  rightE1.style.display = "block";
+  leftE1.style.display = "flex";
+  containerE1.classList.remove("success");
+  confirnedMessageE1.classList.remove("active");
+});
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In the future, I want to explore all the necessary features of JS.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [resource 1](https://www.youtube.com/watch?v=rSkIx9PL0h8&t=586s) - I helped with writing the project.
+- [resource 2](https://www.frontendmentor.io/) - It always helps to find a good practice.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [Ernur](https://ernur-burshak.github.io/Newsletter-sign-up-form-with-success-message/)
+- Frontend Mentor - [@ernur-burshak](https://www.frontendmentor.io/profile/ernur-burshak)
+- Linkedin - [Ernur Burshak](https://www.linkedin.com/in/ernur-burshak-7b6b0b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I want to thank the author @edsHTML on the YouTube channel to help me make the project, thank you!
