@@ -1,20 +1,20 @@
 const containerE1 = document.getElementById("container");
-const leftE1 = document.getElementById("left");
 const rightE1 = document.getElementById("right");
+const leftE1 = document.getElementById("left");
 
-const userEmailE1 = document.getElementById("user-email");
 const invalidEmailE1 = document.getElementById("invalid-email");
 const emailInput = document.getElementById("email");
 const submitButtonE1 = document.getElementById("submit-button");
 
 const confirnedMessageE1 = document.getElementById("confirned-message");
+const userEmailE1 = document.getElementById("user-email");
 const dismissMessageE1 = document.getElementById("dismiss-message");
 
 function formSuccess() {
-  confirnedMessageE1.classList.add("active");
   containerE1.classList.add("success");
-  leftE1.style.display = "none";
+  confirnedMessageE1.classList.add("active");
   rightE1.style.display = "none";
+  leftE1.style.display = "none";
 }
 
 function validateEmail(email) {
@@ -40,8 +40,8 @@ submitButtonE1.addEventListener("click", (e) => {
 });
 
 dismissMessageE1.addEventListener("click", () => {
-  leftE1.style.display = "block";
   rightE1.style.display = "block";
+  leftE1.style.display = "flex";
   containerE1.classList.remove("success");
   confirnedMessageE1.classList.remove("active");
 });
